@@ -42,7 +42,7 @@ module Authorization
   # +@proxy_options[:joins] = { :bar => { :baz => :foo } }
   # @proxy_options[:conditions] = [ 'foos_bazzes.attr = :foos_bazzes__id_0', { :foos_bazzes__id_0 => 1 } ]+
   #
-  class ObligationScope < (Rails.version < "3" ? ActiveRecord::NamedScope::Scope : ActiveRecord::Relation)
+  class ObligationScope #< (Rails.version < "3" ? ActiveRecord::NamedScope::Scope : ActiveRecord::Relation)
     def initialize (model, options)
       @finder_options = {}
       if Rails.version < "3"
